@@ -43,6 +43,7 @@ response = loop.run_until_complete(CloudPaymentsClient().client_request("cards/c
                                                                         AccountId="user_x",
                                                                         Name="CARDHOLDER NAME",
                                                                         CardCryptogramPacket="some_token",
+                                                                        CultureName="ru-RUS",
                                                                         Payer={
                                                                             "FirstName": "Тест",
                                                                             "LastName": "Тестов",

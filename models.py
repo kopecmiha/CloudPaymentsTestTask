@@ -3,6 +3,8 @@ from marshmallow import Schema, fields, validate
 allowed_currencies = ["RUB", "EUR", "USD", "GBP", "UAH", "BYR", "BYN", "KZT", "AZN", "CHF", "CZK", "CAD", "PLN", "SEK",
                       "TRY", "CNY", "INR", "BRL", "ZAR", "UZS", "BGN", "RON", "AUD", "HKD", "GEL", "KGS", "AMD", "AED"]
 
+allowed_culture_codes = ["ru-RU", "en-US", "lv", "az", "kk", "uk", "pl", "vi", "tr"]
+
 
 class PayerSchema(Schema):
     FirstName = fields.Str()
@@ -13,6 +15,7 @@ class PayerSchema(Schema):
     Street = fields.Str()
     City = fields.Str()
     Country = fields.Str()
+
     Phone = fields.Str()
     Postcode = fields.Str()
 
@@ -25,6 +28,7 @@ class CryptogramSchema(Schema):
     Description = fields.Str()
     AccountId = fields.Str()
     Name = fields.Str()
+    CultureName = fields.Str(validate=validate.OneOf(allowed_culture_codes))
     CardCryptogramPacket = fields.Str(required=True)
     Payer = fields.Nested(PayerSchema())
 

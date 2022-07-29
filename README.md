@@ -6,13 +6,14 @@
 
 Сериализатор CryptogramSchema включает поля с требованиями аналоичными с требованиями в документации cloudpayments:
 Amount - обязательное, Integer
-Currency  необязательное, String, должна входить в список доступных валют https://developers.cloudpayments.ru/#tipy-uvedomleniy
+Currency  необязательное, String, значение должно входить в список доступных валют https://developers.cloudpayments.ru/#tipy-uvedomleniy
 InvoiceId - необязательное, String
 IpAddress - обязательное, String
 Description - необязательное, String
 AccountId - необязательное, String
 Name - необязательное, String
 CardCryptogramPacket - обязательное, String
+CultureName - необязательное, String, значение должно входить в список доступных кодов https://developers.cloudpayments.ru/#zapusk-sessii-dlya-oplaty-cherez-apple-pay
 Payer - необязательное, объект плательщика
 
 Сериализатор PayerSchema включает поля с требованиями аналоичными с требованиями в документации cloudpayments:
